@@ -9,7 +9,10 @@
         "README.md",
         "assets.json",
         "tilemap.g.jres",
-        "tilemap.g.ts"
+        "tilemap.g.ts",
+        "assets.ts",
+        "map.ts",
+        "collisions.ts"
     ],
     "testFiles": [
         "test.ts"
