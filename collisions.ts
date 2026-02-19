@@ -45,3 +45,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, l
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) { // hit blue strips
     sprite.vy = 150
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`finishline1`, function (sprite, location) { // hit finishline1
+
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`finishline2`, function (sprite, location) { // hit finishline2
+
+})
