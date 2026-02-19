@@ -8,7 +8,7 @@ function setCC() {
         game.splash("nuh uh!")
         cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
     }
-  //  speed = cc
+   let speed = cc
 }
 
 let player4: Sprite = null
