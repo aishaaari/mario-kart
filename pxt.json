@@ -12,7 +12,8 @@
         "tilemap.g.ts",
         "assets.ts",
         "map.ts",
-        "collisions.ts"
+        "collisions.ts",
+        "buttonPress.ts"
     ],
     "testFiles": [
         "test.ts"

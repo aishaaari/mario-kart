@@ -10,3 +10,10 @@ function setCC() {
     }
   //  speed = cc
 }
+
+let player4: Sprite = null
+let player3: Sprite = null
+let player2: Sprite = null
+let player1: Sprite = null
+let cpu = null
+let speed = 0
