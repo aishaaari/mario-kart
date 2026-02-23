@@ -1,0 +1,12 @@
+{
+    "image4": {
+        "data": "hwQVABAAAAAAEQAAAAAAAAARAQAAAAAAABERAAAAAQAAEREBiBgBAAAREYiIGdENABGBiJgY0d0AEIGIiRjR3QAAmJiIGNHdAACIiYgY0d0AAIiJiBjR3QAAiImIGNHdAACIiYgY0d0AAIiJiBjR3QAAmJiIGNHdABCBiIkY0d0AEYGImBjR3QAREYiIGdENABERAYgYAQAAEREAAAABAAARAQAAAAAAABEAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "blueShell"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}

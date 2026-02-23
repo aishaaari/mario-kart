@@ -2,7 +2,8 @@
     "name": "mario kart",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "js Mario Kart images": "pub:99411-85179-00776-81293"
     },
     "files": [
         "main.ts",
@@ -13,7 +14,9 @@
         "assets.ts",
         "map.ts",
         "collisions.ts",
-        "buttonPress.ts"
+        "buttonPress.ts",
+        "images.g.jres",
+        "images.g.ts"
     ],
     "testFiles": [
         "test.ts"
