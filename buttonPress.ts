@@ -31,29 +31,29 @@ controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Relea
     player4.vy = 0
 })
 
-//reverse movement
-controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    player1.vy = - speed
-})
-controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    player2.vy = - speed
-})
-controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    player3.vy = - speed
-})
-controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
-    player4.vy = - speed
-})
-//stop reverse movement
-controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
-    player1.vy = 0
-})
-controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
-    player2.vy = 0
-})
-controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
-    player3.vy = 0
-})
-controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
-    player4.vy = 0
-})
+// //reverse movement does not work needs diferent button not sure if I need it
+// controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+//     player1.vy = - speed
+// })
+// controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+//     player2.vy = - speed
+// })
+// controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+//     player3.vy = - speed
+// })
+// controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function () {
+//     player4.vy = - speed
+// })
+// //stop reverse movement
+// controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+//     player1.vy = 0
+// })
+// controller.player2.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+//     player2.vy = 0
+// })
+// controller.player3.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+//     player3.vy = 0
+// })
+// controller.player4.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Released, function () {
+//     player4.vy = 0
+// })
