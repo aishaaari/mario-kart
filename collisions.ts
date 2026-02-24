@@ -42,8 +42,13 @@ scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) { // hit blue strips
     controller.moveSprite(mySprite, 200, 200)
-
+    game.onUpdateInterval(500, function () { // every 500 ms check if it is going faster, if it is stop it
+        if (mySprite.vy === 200) {
+            controller.moveSprite(mySprite, 100, 100)
+        }
+    })
 })
+
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) { // hit blue strips
     sprite.vy = -150
 })
