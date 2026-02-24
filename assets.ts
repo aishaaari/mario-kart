@@ -503,6 +503,5 @@ let characters = [sprites.create(img`
 ]
 
 
-
-animation.runImageAnimation(mySprite, itemBlockAnimation, 100, true)
+// animation.runImageAnimation(mySprite, itemBlockAnimation, 100, true)
 
