@@ -502,4 +502,7 @@ let characters = [sprites.create(img`
 `, SpriteKind.Player)
 ]
 
+
+
 animation.runImageAnimation(mySprite, itemBlockAnimation, 100, true)
+

@@ -2,8 +2,7 @@
     "name": "mario kart",
     "description": "",
     "dependencies": {
-        "device": "*",
-        "js Mario Kart images": "pub:99411-85179-00776-81293"
+        "device": "*"
     },
     "files": [
         "main.ts",
