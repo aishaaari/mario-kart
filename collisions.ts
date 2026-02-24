@@ -53,3 +53,19 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`finishline1`, function (sprit
 scene.onOverlapTile(SpriteKind.Player, assets.tile`finishline2`, function (sprite, location) { // hit finishline2
 
 })
+
+//spawn powerup on on overlap 
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite: Sprite, otherSprite: Sprite) {
+    let power = sprites.create(powerArray[randint(0, powerArray.length)], SpriteKind.Player)
+    if (sprite == player1) {
+
+    } else if (sprite == player2) {
+
+    } else if (sprite == player3) {
+
+    } else if (sprite == player4) {
+
+    } else {
+
+    }
+})
