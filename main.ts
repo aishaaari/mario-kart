@@ -8,7 +8,7 @@ function setCC() {
         game.splash("nuh uh!")
         cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
     }
-  //  speed = cc
+    speed = cc
 }
 
 let player4: Sprite = null
@@ -21,3 +21,4 @@ let speed = 0
 namespace SpriteKind {
     export const PowerUp = SpriteKind.create()
 }
+setCC()
