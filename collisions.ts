@@ -41,9 +41,8 @@ controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile3`, function (sprite, location) { // hit blue strips
-    sprite.vy = 150
+    controller.moveSprite(mySprite, 200, 200)
 
- //   sprite.vy = 100
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile4`, function (sprite, location) { // hit blue strips
     sprite.vy = -150
