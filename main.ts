@@ -15,7 +15,4 @@ let player1: Sprite = null
 let cpu = null
 let speed = 0
 
-namespace SpriteKind {
-    export const PowerUp = SpriteKind.create()
-}
 setCC()

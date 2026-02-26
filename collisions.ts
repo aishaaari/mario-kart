@@ -61,7 +61,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`finishline2`, function (sprit
 
 //spawn powerup on on overlap 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite: Sprite, otherSprite: Sprite) {
-    let power = sprites.create(powerArray[randint(0, powerArray.length)], SpriteKind.Player)
+    let power = sprites.create(powerArray[randint(0, powerArray.length)], SpriteKind.Projectile)
     power.setPosition(hitPower(sprite), 10)
     power.setFlag(SpriteFlag.Ghost, true)
 })
