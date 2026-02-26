@@ -1,0 +1,2 @@
+function hitPower(sprite: Sprite){
+}

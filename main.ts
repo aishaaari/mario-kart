@@ -1,6 +1,3 @@
-
-
-
 //movement speed select
 function setCC() {
     let cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
