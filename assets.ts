@@ -501,7 +501,9 @@ let characters = [sprites.create(img`
     ......................................................................
 `, SpriteKind.Player)
 ]
+let playerArray = [
 
+]
 
 // animation.runImageAnimation(mySprite, itemBlockAnimation, 100, true)
 
