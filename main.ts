@@ -20,8 +20,12 @@ let player4: Sprite = null
 let player3: Sprite = null
 let player2: Sprite = null
 let player1: Sprite = null
-let cpu = null
+let cpu: Sprite = null
 let speed = 0
 
 setCC()
-selectMap()
+let powerArray = [
+    assets.image`greenShell`,
+    assets.image`redShell`,
+    assets.image`blueShell`,
+]

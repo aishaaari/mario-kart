@@ -1,12 +1,3 @@
-//array of powerups
-let powerArray = [
-    assets.image`greenShell`,
-    assets.image`speedMushroom`,
-    assets.image`redShell`,
-    assets.image`blueShell`,
-    assets.image`lightining`,
-]
-
 let itemBlockAnimation = [
     img`
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1

@@ -3,16 +3,13 @@ function hitPower(sprite: Sprite){
     while(sprite != playerArray[i]){
         i++
     }
-    return (i + 1) * 22
+    return (i + 1) * 32
 }
 //shoot powerups
-/*
-function shootPowers(xpos: Number){
+function shootPowers(xpos: Number, player: Sprite){
     for (let value of sprites.allOfKind(SpriteKind.Projectile)){
         if (value.x == xpos){
-            if ((value.image != put something here ) && (value.image != )){
-                
-            }
+            let projectile = sprites.createProjectileFromSprite(value.image, mySprite, 0, 50)
         }
     }
-} */
+} 
