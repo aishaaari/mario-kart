@@ -5,6 +5,7 @@ controller.player3.moveSprite(player3, speed, speed)
 controller.player4.moveSprite(player4, speed, speed)
 
 //shoot
+
 controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Pressed, function() {
     
 })
