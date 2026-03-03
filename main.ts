@@ -22,7 +22,7 @@ let player2: Sprite = null
 let player1: Sprite = null
 let cpu: Sprite = null
 let speed = 0
-
+let firstplace = 0
 setCC()
 selectMap()
 let powerArray = [
@@ -30,3 +30,17 @@ let powerArray = [
     assets.image`redShell`,
     assets.image`blueShell`,
 ]
+
+//find first place
+game.onUpdate(function() {
+    for(let i = 0; i < playerArray.length; i++){
+        for(let i2 = 0; i2 < playerArray.length; i2++){
+            if (playerArray[i].y > playerArray[i2].y){
+                firstplace = i
+            }else{
+                i++
+                i2 = 0
+            }
+        }
+    }
+})

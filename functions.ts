@@ -13,3 +13,4 @@ function shootPowers(xpos: Number, player: Sprite){
         }
     }
 } 
+
