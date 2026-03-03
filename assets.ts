@@ -235,6 +235,38 @@ let itemBlockAnimation = [
     `,
 ]
 
+let test = tiles.getTilesByType(assets.tile`myTile`)
+let length = test.length
+for (let index = 0; index <= length; index++) {
+    itemBlock = sprites.create(img`
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 3 3 3 3 3 3 3 3 9 9 9 9 9 9 1 
+        1 3 3 3 3 1 1 1 1 1 1 1 8 9 9 1 
+        1 3 3 3 1 1 1 8 8 8 8 1 8 9 9 1 
+        1 3 3 1 1 8 8 3 9 9 9 1 1 8 9 1 
+        1 3 3 1 8 3 3 9 9 9 9 9 1 8 9 1 
+        1 3 3 1 8 3 9 9 9 9 9 1 1 8 9 1 
+        1 3 3 8 3 9 9 1 1 1 1 1 8 9 9 1 
+        1 3 3 3 9 9 9 1 1 1 8 8 9 9 9 1 
+        1 3 3 9 9 9 1 1 8 8 9 9 9 9 9 1 
+        1 9 9 9 9 9 1 1 8 9 9 9 9 9 9 1 
+        1 9 9 9 9 9 9 1 8 9 9 9 9 9 9 1 
+        1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 1 
+        1 9 9 9 9 9 9 1 8 9 9 9 9 9 9 1 
+        1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 1 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        `, SpriteKind.Player)
+    tiles.placeOnRandomTile(itemBlock, assets.tile`myTile`)
+    for (let index = 0; index <= length; index++) {
+        animation.runImageAnimation(
+            itemBlock,
+            itemBlockAnimation,
+            100,
+            true
+        )
+    }
+}
+
 let characters = [sprites.create(img`
     ......................................................................
     ......................................................................
