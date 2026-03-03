@@ -1,21 +1,5 @@
-//movement speed select
-function setCC() {
-    let cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
-    while ((cc != 50) && (cc != 100) && (cc != 150)) {
-        game.splash("nuh uh!")
-        cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
-    }
-    speed = cc
-}
-function selectMap() {
-    let chosenMap = game.askForString("Which map? A or B", 1)
-    if (chosenMap === "A") {
-        tiles.setCurrentTilemap(tilemap`level1`)
-    } else {
-        tiles.setCurrentTilemap(tilemap`level2`)
-    }
-}
 
+//player select
 namespace SpriteKind {
     export const Mario = SpriteKind.create();
     export const Luigi = SpriteKind.create();
@@ -41,34 +25,12 @@ let playerImage = (img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, SpriteKind.Player)
-for (let i = 1; i < 5; i++) {
-    game.splash("Select Player" + i)
-    if (i === 1) {
-        characterselect()
-        let player1 = sprites.create(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `, SpriteKind.Player)
 
-    }
-}
-
+let cursorSprite: Sprite = null
+let playerArray: Sprite[] = []
 
 function characterselect() {
+    //create
     let player1selection = sprites.create(img`
     2 2 2 8 8 2 2 2 2 2 2 8 8 2 2 2
     2 2 2 8 8 2 2 2 2 2 2 8 8 2 2 2
@@ -164,7 +126,7 @@ function characterselect() {
     2 2 1 1 1 1 1 1 1 1 1 1 1 1 1 1
 `, SpriteKind.Toad) // toad
     player5selection.setPosition(145, 15)
-    let cursorSprite = sprites.create(img`
+    cursorSprite = sprites.create(img`
     a a a a a a a a a a a a a a a a
     . a a a a a a a a a a a a a a a
     . . a a a a a a a a a a a a a a
@@ -182,10 +144,12 @@ function characterselect() {
     a a a a . . . . . . . . . . a a
     a a a . . . . . . . . . . . a a
 `, SpriteKind.Player)
-    controller.moveSprite(cursorSprite)
-
+    //let player 1 controll sprite
+    controller.player1.moveSprite(mySprite)
+}
+    //overlaps
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Mario, function (sprite: Sprite, otherSprite: Sprite) {
-        let playerImage = sprites.create(img`
+        playerArray.push(sprites.create(img`
         ......................................................................
         ......................................................................
         ......................................................................
@@ -236,10 +200,11 @@ function characterselect() {
         ......................................................................
         ......................................................................
         ......................................................................
-    `, SpriteKind.Player)
+    `, SpriteKind.Player))
+        choices(otherSprite)
     })
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Luigi, function (sprite: Sprite, otherSprite: Sprite) {
-        let playerImage = sprites.create(img`
+        playerArray.push(sprites.create(img`
     ......................................................................
     ......................................................................
     ......................................................................
@@ -290,10 +255,11 @@ function characterselect() {
     ......................................................................
     ......................................................................
     ......................................................................
-`, SpriteKind.Player)
+`, SpriteKind.Player))
+        choices(otherSprite)
     })
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Peach, function (sprite: Sprite, otherSprite: Sprite) {
-        let playerImage = sprites.create(img`
+        playerArray.push(sprites.create(img`
     ......................................................................
     ......................................................................
     ......................................................................
@@ -344,10 +310,11 @@ function characterselect() {
     ......................................................................
     ......................................................................
     ......................................................................
-`, SpriteKind.Player)
+`, SpriteKind.Player))
+        choices(otherSprite)
     })
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Yoshi, function (sprite: Sprite, otherSprite: Sprite) {
-        let playerImage = sprites.create(img`
+        playerArray.push(sprites.create(img`
     ......................................................................
     ......................................................................
     ......................................................................
@@ -398,10 +365,11 @@ function characterselect() {
     ......................................................................
     ......................................................................
     ......................................................................
-`, SpriteKind.Player)
+`, SpriteKind.Player))
+        choices(otherSprite)
     })
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Toad, function (sprite: Sprite, otherSprite: Sprite) {
-        let playerImage = sprites.create(img`
+        playerArray.push(sprites.create(img`
     ......................................................................
     ......................................................................
     ......................................................................
@@ -452,19 +420,52 @@ function characterselect() {
     ......................................................................
     ......................................................................
     ......................................................................
-`, SpriteKind.Player)
+`, SpriteKind.Player))
+        choices(otherSprite)
     })
+characterselect()
+let choiceCounter = 0
+function choices(sprite: Sprite) {
+    sprites.destroy(sprite)
+    choiceCounter = choiceCounter + 1
+    if (choiceCounter == 1) {
+        controller.player2.moveSprite(cursorSprite)
+    } else if (choiceCounter == 2) {
+        controller.player3.moveSprite(cursorSprite)
+    } else if (choiceCounter == 3) {
+        controller.player4.moveSprite(cursorSprite)
+    } else {
+        sprites.destroy(cursorSprite)
+        setCC()
+        selectMap()
+    }
 }
 
-let player4: Sprite = null
-let player3: Sprite = null
-let player2: Sprite = null
-let player1: Sprite = null
+//movement speed select
+function setCC() {
+    let cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
+    while ((cc != 50) && (cc != 100) && (cc != 150)) {
+        game.splash("nuh uh!")
+        cc = game.askForNumber("50 cc, 100, cc, or 150 cc", 3)
+    }
+    speed = cc
+}
+function selectMap() {
+    let chosenMap = game.askForString("Which map? A or B", 1)
+    if (chosenMap === "A") {
+        tiles.setCurrentTilemap(tilemap`level1`)
+    } else {
+        tiles.setCurrentTilemap(tilemap`level2`)
+    }
+}
+let player4 = playerArray[3]
+let player3 = playerArray[2]
+let player2 = playerArray[1]
+let player1 = playerArray[0]
 let cpu: Sprite = null
 let speed = 0
 let firstplace = 0
-setCC()
-selectMap()
+
 let powerArray = [
     assets.image`greenShell`,
     assets.image`redShell`,
