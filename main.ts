@@ -24,6 +24,7 @@ let cpu: Sprite = null
 let speed = 0
 
 setCC()
+selectMap()
 let powerArray = [
     assets.image`greenShell`,
     assets.image`redShell`,
