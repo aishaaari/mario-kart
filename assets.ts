@@ -235,7 +235,7 @@ let itemBlockAnimation = [
     `,
 ]
 
-let test = tiles.getTilesByType(assets.tile`myTile`)
+let test = tiles.getTilesByType(assets.tile`myTile7`)
 let length = test.length
 for (let index = 0; index <= length; index++) {
     itemBlock = sprites.create(img`
@@ -256,7 +256,7 @@ for (let index = 0; index <= length; index++) {
         1 9 9 9 9 9 9 9 9 9 9 9 9 9 9 1 
         1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
         `, SpriteKind.Player)
-    tiles.placeOnRandomTile(itemBlock, assets.tile`myTile`)
+    tiles.placeOnRandomTile(itemBlock, assets.tile`myTile7`)
     for (let index = 0; index <= length; index++) {
         animation.runImageAnimation(
             itemBlock,
