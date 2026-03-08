@@ -127,25 +127,24 @@ function characterselect() {
 `, SpriteKind.Toad) // toad
     player5selection.setPosition(145, 15)
     cursorSprite = sprites.create(img`
-    a a a a a a a a a a a a a a a a
-    . a a a a a a a a a a a a a a a
-    . . a a a a a a a a a a a a a a
-    . . . a a a a a a a a a a a a a
-    . . . a a a a a a a a a a a a a
-    . . . . a a a a a a a a a a a a
-    . . . . . a a a a a a a a a a a
-    . . . . . . a a a a a a a a a a
-    . . . . . . a a a a a a a a a a
-    . . . . . a a a a . a a a a a a
-    . . . . a a a a . . . . a a a a
-    . . . a a a a a . . . . a a a a
-    . . a a a a a . . . . . . a a a
-    . a a a a a . . . . . . . a a a
-    a a a a . . . . . . . . . . a a
-    a a a . . . . . . . . . . . a a
-`, SpriteKind.Player)
+        a a a a a a a a a a a a a a a a
+        . a a a a a a a a a a a a a a a
+        . . a a a a a a a a a a a a a a
+        . . . a a a a a a a a a a a a a
+        . . . a a a a a a a a a a a a a
+        . . . . a a a a a a a a a a a a
+        . . . . . a a a a a a a a a a a
+        . . . . . . a a a a a a a a a a
+        . . . . . . a a a a a a a a a a
+        . . . . . a a a a . a a a a a a
+        . . . . a a a a . . . . a a a a
+        . . . a a a a a . . . . a a a a
+        . . a a a a a . . . . . . a a a
+        . a a a a a . . . . . . . a a a
+        a a a a . . . . . . . . . . a a
+        a a a . . . . . . . . . . . a a
+    `, SpriteKind.Player)
     //let player 1 controll sprite
-    controller.player1.moveSprite(mySprite)
 }
     //overlaps
     sprites.onOverlap(SpriteKind.Player, SpriteKind.Mario, function (sprite: Sprite, otherSprite: Sprite) {
@@ -424,6 +423,7 @@ function characterselect() {
         choices(otherSprite)
     })
 characterselect()
+controller.player1.moveSprite(cursorSprite)
 let choiceCounter = 0
 function choices(sprite: Sprite) {
     sprites.destroy(sprite)
@@ -438,6 +438,7 @@ function choices(sprite: Sprite) {
         sprites.destroy(cursorSprite)
         setCC()
         selectMap()
+        move()
     }
 }
 
@@ -458,10 +459,10 @@ function selectMap() {
         tiles.setCurrentTilemap(tilemap`level2`)
     }
 }
-let player4 = playerArray[3]
-let player3 = playerArray[2]
-let player2 = playerArray[1]
-let player1 = playerArray[0]
+let player4: Sprite = null
+let player3: Sprite = null
+let player2: Sprite = null
+let player1: Sprite = null
 let cpu: Sprite = null
 let speed = 0
 let firstplace = 0
@@ -485,3 +486,10 @@ game.onUpdate(function() {
         }
     }
 })
+function move(){
+    // side to side movement
+    controller.player1.moveSprite(player1, speed, speed)
+    controller.player2.moveSprite(player2, speed, speed)
+    controller.player3.moveSprite(player3, speed, speed)
+    controller.player4.moveSprite(player4, speed, speed)
+}
